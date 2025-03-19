@@ -9,4 +9,4 @@ For example if there is a vulnerability in release `0.0.1` we will fix that rele
 
 ## Reporting a Vulnerability
 
-If you are aware of a vulnerability please feel free to disclose it responsibly to info@whiteduck.de .
+If you are aware of a vulnerability please feel free to open an issue.
