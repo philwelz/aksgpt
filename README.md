@@ -6,20 +6,30 @@
 To install `aksgpt`, you can use the following command:
 
 ```bash
-go install github.com/philwelz/aksgpt@latest
+go install github.com/philwelz/aksgpt
 ```
 
 ## AI Backends
 
 `aksgpt` supports the following AI backends to provide recommendations:
-- [OpenAI](https://openai.com/)
+- [OpenAI](https://platform.openai.com/)
 
 ### Quick Start
+
+To run `aksgpt`, you need to set up the following environment variables:
 
 ```bash
 export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
 export OPENAI_API_KEY=<Platform API Key>
 ```
+
+You can then run `aksgpt` with the following command:
+
+```bash
+aksgpt inspect cluster -g <Resource Group> -c <Cluster Name>
+```
+
+IMPORTANT: Remember to add $GOPATH to your $PATH variable. Otherwise, you find the binary in $GOPATH/bin.
 
 ## Anonymized cluster information
 
