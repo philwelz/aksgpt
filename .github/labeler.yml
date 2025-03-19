@@ -1,0 +1,17 @@
+actions:
+- changed-files:
+  - any-glob-to-any-file:
+    - .github/**
+
+go:
+- changed-files:
+  - any-glob-to-any-file:
+    - '**/*.go'
+    - '**/*.sum'
+    - '.golangci.yml'
+
+documentation:
+- changed-files:
+  - any-glob-to-any-file:
+    - 'LICENSE'
+    - docs/**
