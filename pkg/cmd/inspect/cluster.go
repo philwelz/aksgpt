@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"time"
 
-	azure "aksgpt/pkg/cmd/utils"
+	azure "github.com/philwelz/aksgpt/pkg/cmd/utils"
 
 	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice"
 	"github.com/fatih/color"

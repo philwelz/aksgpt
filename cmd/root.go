@@ -4,8 +4,9 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"aksgpt/cmd/inspect"
 	"os"
+
+	"github.com/philwelz/aksgpt/cmd/inspect"
 
 	"github.com/spf13/cobra"
 )

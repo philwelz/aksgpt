@@ -4,9 +4,9 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package inspect
 
 import (
-	ai "aksgpt/pkg/ai"
-	cluster "aksgpt/pkg/cmd/inspect"
-	azure "aksgpt/pkg/cmd/utils"
+	ai "github.com/philwelz/aksgpt/pkg/ai"
+	cluster "github.com/philwelz/aksgpt/pkg/cmd/inspect"
+	azure "github.com/philwelz/aksgpt/pkg/cmd/utils"
 
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
