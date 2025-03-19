@@ -1,4 +1,4 @@
-module aksgpt
+module github.com/philwelz/aksgpt
 
 go 1.24.1
 
