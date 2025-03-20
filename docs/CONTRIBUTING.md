@@ -59,7 +59,7 @@ We use [Semantic Commits](https://www.conventionalcommits.org/en/v1.0.0/) to mak
 - `feat`: A new feature
 - `fix`: A bug fix
 - `docs`: Documentation changes
-- `chore` or `chors`: Changes to the build process or auxiliary tools and libraries such as documentation generation
+- `chore` or `chores`: Changes to the build process or auxiliary tools and libraries such as documentation generation
 - `refactor`: A code change that neither fixes a bug nor adds a feature
 - `test`: Adding missing tests or correcting existing tests
 - `ci`: Changes to our CI configuration files and scripts
