@@ -1,5 +1,5 @@
 
-`aksgpt` is a [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt) inspired tool leveraging AI for scanning your AKS cluster configuration and providing recommendations for best practices. It is designed to help you identify potential issues and improve the security and performance of your AKS clusters.
+`aksgpt` is a powerful tool inspired by [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt)  that uses AI to analyze and review your Azure Kubernetes Service (AKS) cluster configuration. It provides actionable recommendations for best practices, helping you identify potential issues and optimize the security, performance, and overall health of your AKS clusters.
 
 ## Installation
 
@@ -9,37 +9,38 @@ To install `aksgpt`, you can use the following command:
 go install github.com/philwelz/aksgpt
 ```
 
+> IMPORTANT: Make sure to add $GOPATH to your $PATH variable. If you don't, the binary will be located in $GOPATH/bin.
+
 ## AI Backends
 
-`aksgpt` supports the following AI backends to provide recommendations:
+`aksgpt` integrates with the following AI backends to deliver recommendations:
+
 - [OpenAI](https://platform.openai.com/)
 
 ### Quick Start
 
-To run `aksgpt`, you need to set up the following environment variables:
+Before running `aksgpt`, ensure that the following environment variables are configured:
 
 ```bash
 export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
 export OPENAI_API_KEY=<Platform API Key>
 ```
 
-You can then run `aksgpt` with the following command:
+You can run `aksgpt` using the command below:
 
 ```bash
 aksgpt inspect cluster -g <Resource Group> -c <Cluster Name>
 ```
 
-IMPORTANT: Remember to add $GOPATH to your $PATH variable. Otherwise, you find the binary in $GOPATH/bin.
-
 ## Anonymized cluster information
 
-The cluster information is anonymized before sending it to the AI backend. The following fields are **REDACTED** as they could contain sensitive information:
+Cluster information is anonymized prior to being sent to the AI backend. The following fields are REDACTED to ensure sensitive data is protected:
 
+- any `clientId`
+- any `objectId`
+- any `resourceId`
 - `tenantID`
 - `subscriptionId`
-- `clientId`
-- `objectId`
-- `resourceId`
 - `azurePortalFQDN`
 - `fqdn`
 - `dnsPrefix`
@@ -47,7 +48,7 @@ The cluster information is anonymized before sending it to the AI backend. The f
 - `nodeResourceGroup`
 - `location`
 
-Sample AKS config json that is send to the AI backend:
+Example AKS configuration JSON submitted to the AI backend:
 
 <details>
 <summary>JSON</summary>

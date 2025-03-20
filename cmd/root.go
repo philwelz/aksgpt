@@ -22,7 +22,7 @@ const (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "aksgpt",
-	Short: "AKS debugging powered by AI",
+	Short: "Leverage AI to analyze and detect misconfigurations in any AKS cluster.",
 	Long:  ``,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
