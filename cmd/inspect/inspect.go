@@ -11,7 +11,7 @@ import (
 // InspectCmd represents the inspect command
 var InspectCmd = &cobra.Command{
 	Use:   "inspect",
-	Short: "A brief description of your command",
+	Short: "Analyze your AKS cluster to ensure compliance with best practices.",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, _ []string) {
 		if err := cmd.Help(); err != nil {
@@ -29,7 +29,7 @@ var (
 func init() {
 	// Define the global flags for the inspect command
 	InspectCmd.PersistentFlags().StringVarP(&ClusterName, "cluster-name", "c", "", "The name of the AKS cluster")
-	InspectCmd.PersistentFlags().StringVarP(&ResourceGroup, "resource-group", "g", "", "The name of the resource group")
+	InspectCmd.PersistentFlags().StringVarP(&ResourceGroup, "resource-group", "g", "", "The name of the Resource Group")
 
 	// Mark flags as required
 	if err := InspectCmd.MarkPersistentFlagRequired("cluster-name"); err != nil {

@@ -15,7 +15,7 @@ import (
 // clusterCmd represents the openai command
 var clusterCmd = &cobra.Command{
 	Use:   "cluster",
-	Short: "Inspect AKS cluster for best practices",
+	Short: "Analyze your AKS cluster to ensure compliance with best practices.",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, _ []string) {
 		// Check if required flags are provided
