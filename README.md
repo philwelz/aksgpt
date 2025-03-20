@@ -1,3 +1,13 @@
+[![CodeQL](https://github.com/philwelz/aksgpt/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/philwelz/aksgpt/actions/workflows/github-code-scanning/codeql)
+[![ci](https://github.com/philwelz/aksgpt/actions/workflows/golangci-lint.yaml/badge.svg)](https://github.com/philwelz/aksgpt/actions/workflows/golangci-lint.yaml)
+
+
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/philwelz/aksgpt/main)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/philwelz/aksgpt)
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/philwelz/aksgpt)](https://goreportcard.com/report/github.com/philwelz/aksgpt)
+[![Go version](https://img.shields.io/github/go-mod/go-version/philwelz/aksgpt.svg)](https://github.com/philwelz/aksgpt)
+
 
 `aksgpt` is a powerful tool inspired by [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt)  that uses AI to analyze and review your Azure Kubernetes Service (AKS) cluster configuration. It provides actionable recommendations for best practices, helping you identify potential issues and optimize the security, performance, and overall health of your AKS clusters.
 
