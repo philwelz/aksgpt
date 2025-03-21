@@ -2,7 +2,12 @@ name: golangci-lint
 
 on:
   pull_request:
-    branches: [main]
+    branches:
+      - "main"
+    paths:
+      - "**/*.go"
+      - "go.mod"
+      - "go.sum"
 
 permissions:
   contents: read
