@@ -4,9 +4,12 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package inspect
 
 import (
-	ai "github.com/philwelz/aksgpt/pkg/ai"
-	cluster "github.com/philwelz/aksgpt/pkg/cmd/inspect"
-	azure "github.com/philwelz/aksgpt/pkg/cmd/utils"
+	"fmt"
+
+	"github.com/philwelz/aksgpt/pkg/ai"
+	"github.com/philwelz/aksgpt/pkg/azure"
+	"github.com/philwelz/aksgpt/pkg/cluster"
+	"github.com/philwelz/aksgpt/pkg/instructions"
 
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
@@ -42,9 +45,9 @@ var clusterCmd = &cobra.Command{
 		}
 
 		// Display the cluster information - usedful for debugging
-		// fmt.Println(info.(string))
+		fmt.Println(info.(string))
 
-		ai.OpenAiChat(info.(string))
+		ai.OpenAiChat(info.(string), instructions.SystemInstructions)
 	},
 }
 

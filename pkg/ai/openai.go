@@ -1,3 +1,6 @@
+/*
+Copyright © 2025 Philip Welz
+*/
 package ai
 
 import (
@@ -9,7 +12,7 @@ import (
 	"github.com/openai/openai-go"
 )
 
-func OpenAiChat(message string) {
+func OpenAiChat(UserMessage string, SystemInstructions string) {
 	// Check if the environment variable is set
 	apiKey := os.Getenv("OPENAI_API_KEY")
 	if apiKey == "" {
@@ -27,7 +30,7 @@ func OpenAiChat(message string) {
 	// Set Chat parameter
 	params := openai.ChatCompletionNewParams{
 		Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
-			openai.UserMessage(message),
+			openai.UserMessage(UserMessage),
 			openai.SystemMessage(SystemInstructions),
 		}),
 		Model: openai.F(openai.ChatModelGPT4oMini),

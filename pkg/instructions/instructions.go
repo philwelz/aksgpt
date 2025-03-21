@@ -1,8 +1,11 @@
-package ai
+/*
+Copyright © 2025 Philip Welz
+*/
+package instructions
 
 const (
 	SystemInstructions = `Analyze the provided Azure Kubernetes Service (AKS) ARM template for misconfigurations.
-	Utilize best practices outlined in the AKS documentation: https://learn.microsoft.com/en-us/azure/aks/best-practices.
+	Utilize best practices outlined in the AKS documentation: https://github.com/MicrosoftDocs/azure-aks-docs/tree/main/articles/aks.
 	If the auto-scaler is enabled, do not flag any autoScalerProfile settings as misconfigurations.
 	Identify and report only the misconfigurations, ensuring each unique issue is mentioned once.
 	Format the output strictly as follows:
@@ -25,13 +28,14 @@ const (
 	You will get a Azure Kubernetes Service configuration json and your goal is to check the configuration for best practices.
 	Dont give any explanation, just return a list of the best practices that are not followed. Dont tell if a best practice is enabled.
 	If Ubuntu is ued as node image, recommend Azure Linux as the node image.
-		Provide step by step instructions to fix, with suggestions, referencing Azure documentation if relevant.
+	Provide step by step instructions to fix, with suggestions, referencing Azure documentation if relevant.
 	Check if the cluster has an user node node pool and if all node pools use 3 availability Zones.
 	Checkf if the policy addon is used.
 	Check if autoscaling is used.
 	Check further best practices and misconfigurations that are not mentioned here.
 	Write the output in the following format:
-	Misconfiguration: {Explain misconfiguration here}
-	Solution: {Step by step solution here}
+	Misconfiguration: {Explain misconfiguration very short here}
+	Impact: {One very short sentence about the impact here}
+	Reference: {refer Azure documentation}
 	`
 )
