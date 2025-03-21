@@ -1,5 +1,5 @@
 /*
-Copyright © 2025 NAME HERE <EMAIL ADDRESS>
+Copyright © 2025 Philip Welz
 */
 package cluster
 
@@ -9,10 +9,10 @@ import (
 	"fmt"
 	"time"
 
-	azure "github.com/philwelz/aksgpt/pkg/cmd/utils"
-
 	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice"
 	"github.com/fatih/color"
+
+	"github.com/philwelz/aksgpt/pkg/azure"
 )
 
 // ClusterInfo represents the AKS cluster information structure
@@ -25,44 +25,6 @@ type ClusterInfo struct {
 	// NodeResourceGroup string      `json:"nodeResourceGroup"`
 	// FQDN              string      `json:"fqdn"`
 	Properties interface{} `json:"properties"`
-}
-
-// anonymizeMap recursively processes a map to anonymize sensitive fields
-func anonymizeSensitiveFields(data interface{}) interface{} {
-	switch v := data.(type) {
-	case map[string]interface{}:
-		for key, val := range v {
-			// Define sensitive fields that need to be redacted
-			sensitiveFields := map[string]bool{
-				"clientId":             true,
-				"objectId":             true,
-				"resourceId":           true,
-				"tenantID":             true,
-				"azurePortalFQDN":      true,
-				"dnsPrefix":            true,
-				"fqdn":                 true,
-				"effectiveOutboundIPs": true,
-				"nodeResourceGroup":    true,
-				"location":             true,
-				"subscriptionId":       true,
-				"adminUsername":        true,
-			}
-
-			if sensitiveFields[key] {
-				v[key] = "REDACTED"
-			} else {
-				v[key] = anonymizeSensitiveFields(val)
-			}
-		}
-		return v
-	case []interface{}:
-		for i, val := range v {
-			v[i] = anonymizeSensitiveFields(val)
-		}
-		return v
-	default:
-		return v
-	}
 }
 
 func GetClusterInfo(subscriptionID, resourceGroup, clusterName string) (interface{}, error) {
