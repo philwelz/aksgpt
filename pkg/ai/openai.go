@@ -12,7 +12,7 @@ import (
 	"github.com/openai/openai-go"
 )
 
-func OpenAiChat(UserMessage string, SystemInstructions string) {
+func OpenAiChat(userMessage, systemInstructions string) {
 	// Check if the environment variable is set
 	apiKey := os.Getenv("OPENAI_API_KEY")
 	if apiKey == "" {
@@ -30,8 +30,8 @@ func OpenAiChat(UserMessage string, SystemInstructions string) {
 	// Set Chat parameter
 	params := openai.ChatCompletionNewParams{
 		Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
-			openai.UserMessage(UserMessage),
-			openai.SystemMessage(SystemInstructions),
+			openai.UserMessage(userMessage),
+			openai.SystemMessage(systemInstructions),
 		}),
 		Model: openai.F(openai.ChatModelGPT4oMini),
 		// Seed is used to generate deterministic results
