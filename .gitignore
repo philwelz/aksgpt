@@ -1,4 +1,5 @@
 .env
+.local
 .idea
 __debug*
 .DS_Store
