@@ -4,8 +4,6 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package inspect
 
 import (
-	"fmt"
-
 	"github.com/philwelz/aksgpt/pkg/ai"
 	"github.com/philwelz/aksgpt/pkg/azure"
 	"github.com/philwelz/aksgpt/pkg/cluster"
@@ -45,7 +43,7 @@ var clusterCmd = &cobra.Command{
 		}
 
 		// Display the cluster information - usedful for debugging
-		fmt.Println(info.(string))
+		// fmt.Println(info.(string))
 
 		ai.OpenAiChat(info.(string), instructions.SystemInstructions)
 	},
