@@ -15,7 +15,7 @@ var versionCmd = &cobra.Command{
 	Short: "Display the aksgpt version number.",
 	Long:  ``,
 	Run: func(_ *cobra.Command, _ []string) {
-		fmt.Printf("aksgpt: %s\n", "v0.0.2")
+		fmt.Printf("aksgpt: %s\n", "v0.0.3")
 	},
 }
 

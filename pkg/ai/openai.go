@@ -24,24 +24,24 @@ func OpenAiChat(userMessage, systemInstructions string) {
 	client := openai.NewClient()
 
 	// Create a context with timeout
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	ctx, cancel := context.WithTimeout(context.TODO(), 30*time.Second)
 	defer cancel()
 
 	// Set Chat parameter
 	params := openai.ChatCompletionNewParams{
-		Messages: openai.F([]openai.ChatCompletionMessageParamUnion{
+		Messages: []openai.ChatCompletionMessageParamUnion{
 			openai.UserMessage(userMessage),
 			openai.SystemMessage(systemInstructions),
-		}),
-		Model: openai.F(openai.ChatModelGPT4oMini),
+		},
+		Model: openai.ChatModelGPT4oMini,
 		// Seed is used to generate deterministic results
 		Seed: openai.Int(1),
 		// Temperature is used to control the randomness of the output
-		Temperature: openai.F(0.5),
+		Temperature: openai.Opt(0.5),
 		// MaxTokens is used to limit the length of the output
 		MaxTokens: openai.Int(10000),
 		// TopP is used to control the diversity of the output
-		TopP: openai.F(0.7),
+		TopP: openai.Opt(0.7),
 	}
 
 	// Create a new chat completion
