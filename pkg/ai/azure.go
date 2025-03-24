@@ -5,6 +5,7 @@ package ai
 
 import (
 	"context"
+	"log"
 	"os"
 	"time"
 
