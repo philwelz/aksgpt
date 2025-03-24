@@ -25,7 +25,8 @@ go install github.com/philwelz/aksgpt
 
 `aksgpt` integrates with the following AI backends to deliver recommendations:
 
-- [OpenAI](https://platform.openai.com/)
+- [OpenAI](https://platform.openai.com/) - the default backend if no other is specified
+- [Azure OpenAI](https://azure.microsoft.com/products/ai-services/openai-service)
 
 ### Quick Start
 
@@ -36,10 +37,18 @@ export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
 export OPENAI_API_KEY=<Platform API Key>
 ```
 
+If you are using Azure OpenAI, set the following environment variables:
+
+```bash
+export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
+export AZURE_OPENAI_API_KEY=<Azure Open AI API Key>
+export AZURE_OPENAI_ENDPOINT=<Azure OpenAI Endpoint>
+```
+
 You can run `aksgpt` using the command below:
 
 ```bash
-aksgpt inspect cluster -g <Resource Group> -c <Cluster Name>
+aksgpt inspect cluster -g <Resource Group> -c <Cluster Name> -b <Backend>
 ```
 
 ## Anonymized cluster information
