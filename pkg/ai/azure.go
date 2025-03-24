@@ -29,16 +29,14 @@ func AzureOpenAiChat(userMessage, systemInstructions string) {
 
 	// The latest API versions, including previews, can be found here:
 	// https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versionng
-	const azureOpenAIAPIVersion = "2025-01-01-preview"
-	// const azureOpenAIAPIVersion = "2024-10-21"
-	// const azureOpenAIAPIVersion = "2024-06-01"
+	const azureOpenAIAPIVersion = "2024-10-21"
 
 	// Create a new OpenAI client
 	client := openai.NewClient(
 		azure.WithEndpoint(azureOpenAIEndpoint, azureOpenAIAPIVersion),
 
 		// Choose between authenticating using a TokenCredential or an API Key
-		//azure.WithTokenCredential(tokenCredential),
+		// azure.WithTokenCredential(tokenCredential),
 		azure.WithAPIKey(azureOpenAIAPIKey),
 	)
 
