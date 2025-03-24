@@ -5,7 +5,6 @@ package ai
 
 import (
 	"context"
-	"log"
 	"os"
 	"time"
 
@@ -65,8 +64,7 @@ func AzureOpenAiChat(userMessage, systemInstructions string) {
 	// Create a new chat completion
 	chatCompletion, err := client.Chat.Completions.New(ctx, params)
 	if err != nil {
-		log.Printf("Error creating chat completion: %v", err)
-		os.Exit(1)
+		color.Red("Error: %v", err)
 	}
 
 	// Print a newline for better readability
