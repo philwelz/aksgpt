@@ -24,12 +24,14 @@ var InspectCmd = &cobra.Command{
 var (
 	ClusterName   string
 	ResourceGroup string
+	Backend       string
 )
 
 func init() {
 	// Define the global flags for the inspect command
 	InspectCmd.PersistentFlags().StringVarP(&ClusterName, "cluster-name", "c", "", "The name of the AKS cluster")
 	InspectCmd.PersistentFlags().StringVarP(&ResourceGroup, "resource-group", "g", "", "The name of the Resource Group")
+	InspectCmd.PersistentFlags().StringVarP(&Backend, "backend", "b", "openai", "The AI backend to use (openai, azure, defaults to openai)")
 
 	// Mark flags as required
 	if err := InspectCmd.MarkPersistentFlagRequired("cluster-name"); err != nil {
