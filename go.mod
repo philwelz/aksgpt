@@ -1,6 +1,7 @@
 module github.com/philwelz/aksgpt
 
 go 1.24.1
+
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.2
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice v1.0.0
