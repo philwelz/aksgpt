@@ -9,13 +9,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const PackageVersion = "v0.0.3" // x-release-please-version
+
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Display the aksgpt version number.",
 	Long:  ``,
 	Run: func(_ *cobra.Command, _ []string) {
-		fmt.Printf("aksgpt: %s\n", "v0.0.5")
+		fmt.Printf("aksgpt: %s\n", PackageVersion)
 	},
 }
 
