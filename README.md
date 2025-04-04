@@ -17,7 +17,7 @@ To install `aksgpt`, you can use the following command:
 
 <!---x-release-please-start-version-->
 ```bash
-go install github.com/philwelz/aksgpt@0.0.3
+go install github.com/philwelz/aksgpt@v0.0.3
 ```
 <!---x-release-please-end-->
 
@@ -55,24 +55,45 @@ aksgpt inspect cluster -g <Resource Group> -c <Cluster Name> -b <Backend>
 
 ## Anonymized cluster information
 
+### Redacted Fields
+
 Cluster information is anonymized prior to being sent to the AI backend. The following fields are REDACTED to ensure sensitive data is protected:
 
-- any `clientId`
-- any `objectId`
-- any `resourceId`
-- `tenantID`
-- `subscriptionId`
-- `azurePortalFQDN`
-- `fqdn`
-- `dnsPrefix`
-- `effectiveOutboundIPs`
-- `nodeResourceGroup`
-- `location`
+<details>
 
-Example AKS configuration JSON submitted to the AI backend:
+  <summary>List of redacted Fields</summary>
+
+- adminGroupObjectIDs
+- adminUsername
+- azurePortalFQDN
+- clientId
+- dnsPrefix
+- effectiveOutboundIPs
+- fqdn
+- id
+- issuerURL
+- location
+- nodeResourceGroup
+- objectId
+- podSubnetID
+- principalId
+- privateDnsZone
+- privateFQDN
+- resourceId
+- subscriptionId
+- tenantID
+- userAssignedIdentities
+- vnetSubnetID
+</details>
+
+
+### Example AKS configuration
+
+The following is an example of the AKS configuration JSON that is submitted to the AI backend.
 
 <details>
-<summary>JSON</summary>
+
+  <summary>Example AKS configuration JSON submitted to the AI backend</summary>
 
 ```json
 {
@@ -235,7 +256,3 @@ Example AKS configuration JSON submitted to the AI backend:
 }
 ```
 </details>
-
-
-
-
