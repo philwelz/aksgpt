@@ -15,9 +15,11 @@
 
 To install `aksgpt`, you can use the following command:
 
+<!---x-release-please-start-version-->
 ```bash
-go install github.com/philwelz/aksgpt
+go install github.com/philwelz/aksgpt@0.0.2
 ```
+<!---x-release-please-end-->
 
 > IMPORTANT: Make sure to add $GOPATH to your $PATH variable. If you don't, the binary will be located in $GOPATH/bin.
 
