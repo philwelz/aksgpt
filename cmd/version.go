@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-const PackageVersion = "v0.0.3" // x-release-please-version
+const PackageVersion = "v0.0.4" // x-release-please-version
 
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
