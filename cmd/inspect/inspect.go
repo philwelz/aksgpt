@@ -34,7 +34,7 @@ func init() {
 	InspectCmd.PersistentFlags().
 		StringVarP(&ResourceGroup, "resource-group", "g", "", "The name of the Resource Group")
 	InspectCmd.PersistentFlags().
-		StringVarP(&Backend, "backend", "b", "openai", "The AI backend to use (openai, azure, defaults to openai)")
+		StringVarP(&Backend, "backend", "b", "github", "The AI backend to use (github, openai or azure, defaults to github)")
 
 	// Mark flags as required
 	if err := InspectCmd.MarkPersistentFlagRequired("cluster-name"); err != nil {

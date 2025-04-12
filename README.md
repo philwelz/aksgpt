@@ -27,24 +27,33 @@ go install github.com/philwelz/aksgpt@v0.0.4
 
 `aksgpt` integrates with the following AI backends to deliver recommendations:
 
-- [OpenAI](https://platform.openai.com/) - the default backend if no other is specified
+- [GitHub Models](https://github.com/marketplace/models) - the default backend if no other is specified
+- [OpenAI](https://platform.openai.com/)
 - [Azure OpenAI](https://azure.microsoft.com/products/ai-services/openai-service)
+
 
 ### Quick Start
 
-Before running `aksgpt`, ensure that the following environment variables are configured:
+Before running `aksgpt` wit the default **GitHub Models** backend, ensure that the following environment variables are configured:
 
 ```bash
 export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
-export OPENAI_API_KEY=<Platform API Key>
+export GITHUB_TOKEN=<GitHub fine-grained PAT>
 ```
 
-If you are using Azure OpenAI, set the following environment variables:
+If you are using **Azure OpenAI**, set the following environment variables:
 
 ```bash
 export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
 export AZURE_OPENAI_API_KEY=<Azure Open AI API Key>
 export AZURE_OPENAI_ENDPOINT=<Azure OpenAI Endpoint>
+```
+
+If you are using **OpenAi**, set the following environment variables:
+
+```bash
+export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
+export OPENAI_API_KEY=<Platform API Key>
 ```
 
 You can run `aksgpt` using the command below:

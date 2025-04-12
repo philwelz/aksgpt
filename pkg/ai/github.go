@@ -10,31 +10,22 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/openai/openai-go"
-	"github.com/openai/openai-go/azure"
+	"github.com/openai/openai-go/option"
 )
 
-// The latest API versions, including previews, can be found here:
-// https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versionng
-const azureOpenAIAPIVersion = "2024-12-01-preview"
+const githubModelsAPIURL = "https://models.inference.ai.azure.com"
 
-func AzureOpenAiChat(userMessage, systemInstructions string) {
+func GitHubModelsChat(userMessage, systemInstructions string) {
 	// Check if the environment variable is set
-	azureOpenAIAPIKey := os.Getenv("AZURE_OPENAI_API_KEY")
-	if azureOpenAIAPIKey == "" {
-		color.Red("Environment variable AZURE_OPENAI_API_KEY is not set.")
+	apiKey := os.Getenv("GITHUB_TOKEN")
+	if apiKey == "" {
+		color.Red("Environment variable GITHUB_TOKEN is not set.")
 		os.Exit(1)
 	}
-
-	azureOpenAIEndpoint := os.Getenv("AZURE_OPENAI_ENDPOINT")
-	if azureOpenAIEndpoint == "" {
-		color.Red("Environment variable AZURE_OPENAI_ENDPOINT is not set.")
-		os.Exit(1)
-	}
-
 	// Create a new OpenAI client
 	client := openai.NewClient(
-		azure.WithEndpoint(azureOpenAIEndpoint, azureOpenAIAPIVersion),
-		azure.WithAPIKey(azureOpenAIAPIKey),
+		option.WithBaseURL(githubModelsAPIURL),
+		option.WithAPIKey(apiKey),
 	)
 
 	// Create a context with timeout
