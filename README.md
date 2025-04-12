@@ -17,7 +17,7 @@ To install `aksgpt`, you can use the following command:
 
 <!---x-release-please-start-version-->
 ```bash
-go install github.com/philwelz/aksgpt@v0.0.4
+go install github.com/philwelz/aksgpt@v0.0.5
 ```
 <!---x-release-please-end-->
 
