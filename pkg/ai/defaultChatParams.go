@@ -6,7 +6,9 @@ package ai
 import "github.com/openai/openai-go"
 
 // DefaultChatParams defines the default parameters for chat completion
-func DefaultChatCompletionParams(userMessage, systemInstructions string) openai.ChatCompletionNewParams {
+func DefaultChatCompletionParams(
+	userMessage, systemInstructions string,
+) openai.ChatCompletionNewParams {
 	return openai.ChatCompletionNewParams{
 		Messages: []openai.ChatCompletionMessageParamUnion{
 			openai.UserMessage(userMessage),
