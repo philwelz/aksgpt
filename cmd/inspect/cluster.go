@@ -45,12 +45,14 @@ var clusterCmd = &cobra.Command{
 		// Display the cluster information - usedful for debugging
 		// fmt.Println(info.(string))
 		switch Backend {
+		case "github":
+			ai.GitHubModelsChat(info.(string), instructions.SystemInstructions)
 		case "openai":
 			ai.OpenAiChat(info.(string), instructions.SystemInstructions)
 		case "azure":
 			ai.AzureOpenAiChat(info.(string), instructions.SystemInstructions)
 		default:
-			color.Red("Error: unsupported backend '%s'. Use 'openai' or 'azure'", Backend)
+			color.Red("Error: unsupported backend '%s'. Use 'github', 'openai' or 'azure'", Backend)
 			return
 		}
 	},

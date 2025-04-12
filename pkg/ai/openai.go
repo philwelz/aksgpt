@@ -28,26 +28,19 @@ func OpenAiChat(userMessage, systemInstructions string) {
 	defer cancel()
 
 	// Set Chat parameter
-	params := openai.ChatCompletionNewParams{
-		Messages: []openai.ChatCompletionMessageParamUnion{
-			openai.UserMessage(userMessage),
-			openai.SystemMessage(systemInstructions),
-		},
-		Model: openai.ChatModelGPT4oMini,
-		// Seed is used to generate deterministic results
-		Seed: openai.Int(1),
-		// Temperature is used to control the randomness of the output
-		Temperature: openai.Opt(0.5),
-		// MaxTokens is used to limit the length of the output
-		MaxTokens: openai.Int(10000),
-		// TopP is used to control the diversity of the output
-		TopP: openai.Opt(0.7),
-	}
+	params := DefaultChatCompletionParams(userMessage, systemInstructions)
 
 	// Create a new chat completion
 	chatCompletion, err := client.Chat.Completions.New(ctx, params)
 	if err != nil {
 		color.Red("Error: %v", err)
+		return
+	}
+
+	// Check if we got a valid response with at least one choice
+	if len(chatCompletion.Choices) == 0 {
+		color.Red("Error: No choices returned in the response")
+		return
 	}
 
 	// Print a newline for better readability

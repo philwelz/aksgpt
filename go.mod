@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.2
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice v1.0.0
 	github.com/fatih/color v1.18.0
-	github.com/openai/openai-go v0.1.0-beta.6
+	github.com/openai/openai-go v0.1.0-beta.9
 	github.com/spf13/cobra v1.9.1
 )
 
@@ -31,3 +31,11 @@ require (
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 )
+
+replace github.com/philwelz/aksgpt/pkg/azure => ./aksgpt/pkg/azure
+
+replace github.com/philwelz/aksgpt/pkg/ai => ./aksgpt/pkg/ai
+
+replace github.com/philwelz/aksgpt/pkg/cluster => ./aksgpt/pkg/cluster
+
+replace github.com/philwelz/aksgpt/pkg/instructions => ./aksgpt/pkg/instructions
