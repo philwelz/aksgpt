@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/philwelz/aksgpt/compare/v0.0.4...v0.0.5) (2025-04-12)
+
+
+### Features
+
+* update AI backend options and improve error handling ([#26](https://github.com/philwelz/aksgpt/issues/26)) ([ca4d8ae](https://github.com/philwelz/aksgpt/commit/ca4d8aeecfd546a61b30f2f0aa709baa4d6cc835))
+
 ## [0.0.4](https://github.com/philwelz/aksgpt/compare/v0.0.3...v0.0.4) (2025-04-04)
 
 
