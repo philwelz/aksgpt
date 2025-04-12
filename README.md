@@ -34,7 +34,7 @@ go install github.com/philwelz/aksgpt@v0.0.4
 
 ### Quick Start
 
-Before running `aksgpt` wit the default **GitHub Models** backend, ensure that the following environment variables are configured:
+Before running `aksgpt` with the default **GitHub Models** backend, ensure that the following environment variables are configured:
 
 ```bash
 export ARM_SUBSCRIPTION_ID=<Azure Subscription ID>
