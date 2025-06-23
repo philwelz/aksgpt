@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.2
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/containerservice/armcontainerservice v1.0.0
 	github.com/fatih/color v1.18.0
-	github.com/openai/openai-go v0.1.0-beta.9
+	github.com/openai/openai-go v1.6.0
 	github.com/spf13/cobra v1.9.1
 )
 
